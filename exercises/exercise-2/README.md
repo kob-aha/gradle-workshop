@@ -14,13 +14,13 @@ In this exercise we will learn about task dependencies and how to add a dependec
 - Edit the file and add a dependecy between task 'world' and 'hello' (Make sure you add the dependency in the right task). 
 - Once ready, go to the root of the project and run the following:
 
-    `gradlew :exercise-1:run -q`
+    `gradlew :exercise-2:run -q`
 
     (Make sure the output matches the expected output below) 
 
 ## Exepcted output
 
 ```
- gradlew :exercise-1:run -q
+ gradlew :exercise-2:run -q
  Hello World !!!
  ```
