@@ -1,0 +1,14 @@
+task hello {
+    doFirst {
+        print "Hello "
+    }
+}
+
+task world {
+
+    // What should we add in order for the task to write "Hello World !!!" ?
+
+    doFirst {
+        println "World !!!"
+    }
+}

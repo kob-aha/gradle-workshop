@@ -1,0 +1,17 @@
+apply from: 'solution.gradle'
+
+task checkExerciseSolved(description: 'Performs a basic test to check whether the exercise solution is correct') {
+    doFirst {
+        def worldTask = project.tasks['world']
+        def isTaskDependsTaskDefinition = worldTask?.dependsOn.contains(project.tasks['hello'])
+        def isTaskDependsTaskName = worldTask?.dependsOn.contains('hello')
+
+        if (!(isTaskDependsTaskDefinition || isTaskDependsTaskName)) {
+            throw new GradleException("Seems like exercise 1 solution is invalid. Try again.")
+        }
+    }
+}
+
+[world, hello]*.mustRunAfter 'checkExerciseSolved'
+
+task run(dependsOn: [checkExerciseSolved, world])

@@ -1,1 +1,5 @@
-rootProject.name ='gradle-tutorial-exercises'
+rootProject.name ='gradle-workshop'
+
+include 'exercise-1'
+
+project(':exercise-1').projectDir = file('exercises/exercise-1-dependeson')
