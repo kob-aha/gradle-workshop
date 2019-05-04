@@ -1,4 +1,4 @@
-# Exercise 1 - Task dependencies
+# Exercise 2 - Task dependencies
 
 In this exercise we will learn about task dependencies and how to add a dependecy between two tasks
 
