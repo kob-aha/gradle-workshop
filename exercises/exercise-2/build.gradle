@@ -7,7 +7,7 @@ task checkExerciseSolved(description: 'Performs a basic test to check whether th
         def isTaskDependsTaskName = worldTask?.dependsOn.contains('hello')
 
         if (!(isTaskDependsTaskDefinition || isTaskDependsTaskName)) {
-            throw new GradleException("Seems like exercise 1 solution is invalid. Try again.")
+            throw new GradleException("Seems like solution is invalid. Try again.")
         }
     }
 }

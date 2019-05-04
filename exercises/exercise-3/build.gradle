@@ -9,7 +9,7 @@ task checkExerciseSolved(description: 'Performs a basic test to check whether th
         def isTaskDependsTaskName = mustRunAfterTasks.contains(expectedRunAfterTask.name)
 
         if (!(isTaskDependsTaskDefinition || isTaskDependsTaskName)) {
-            throw new GradleException("Seems like exercise 2 solution is invalid. Try again.")
+            throw new GradleException("Seems like solution is invalid. Try again.")
         }
     }
 }
