@@ -1,5 +1,7 @@
 rootProject.name ='gradle-workshop'
 
 include 'exercise-1'
+include 'exercise-2'
 
 project(':exercise-1').projectDir = file('exercises/exercise-1-dependeson')
+project(':exercise-2').projectDir = file('exercises/exercise-2-dependeson')

@@ -1,0 +1,19 @@
+apply from: 'solution.gradle'
+
+task checkExerciseSolved(description: 'Performs a basic test to check whether the exercise solution is correct') {
+    doFirst {
+        def expectedRunAfterTask = project.tasks['hello']
+        def testedTask = project.tasks['fromGradle']
+        def mustRunAfterTasks = testedTask?.mustRunAfter.getDependencies(testedTask)
+        def isTaskDependsTaskDefinition = mustRunAfterTasks.contains(expectedRunAfterTask)
+        def isTaskDependsTaskName = mustRunAfterTasks.contains(expectedRunAfterTask.name)
+
+        if (!(isTaskDependsTaskDefinition || isTaskDependsTaskName)) {
+            throw new GradleException("Seems like exercise 2 solution is invalid. Try again.")
+        }
+    }
+}
+
+[fromGradle, hello]*.mustRunAfter 'checkExerciseSolved'
+
+task run(dependsOn: [checkExerciseSolved, helloFromGradle])
