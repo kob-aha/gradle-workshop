@@ -1,4 +1,4 @@
-# Exercise 1 - Task dependencies
+# Exercise 1 - Task
 
 In this exercise we will learn about a Task which is one of Gradle's basic concepts
 
