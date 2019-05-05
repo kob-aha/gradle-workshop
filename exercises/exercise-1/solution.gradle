@@ -1,1 +1,13 @@
-// Add a new hello task to here which print "Hello World !!!"
+// 1. Add a new hello task to here which print "Hello World !!!"
+// 2. Update the existing "example" task as requested in the exercise description.
+//    There are different ways we can configure it:
+//      - Configure specific property:
+//
+//          example.description ...
+//
+//      - Configure multiple properties using a closure:
+//
+//          example { 
+//              description ...
+//              doFirst ...
+//          }

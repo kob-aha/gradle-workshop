@@ -1,3 +1,30 @@
+task example {
+    mustRunAfter 'checkExerciseSolved'
+}
+
 apply from: 'solution.gradle'
 
-task run(dependsOn: ['hello'])
+task checkExampleTaskDescription {
+    doFirst {
+        def testedTask = project.tasks['example']
+
+        if (!testedTask.description || testedTask.description.isEmpty()) {
+            throw new GradleException("Seems like example task is missing a description. Try again.")
+        }
+    }
+}
+
+task checkExampleTaskAction {
+    doFirst {
+        def testedTask = project.tasks['example']
+
+        if (testedTask?.actions?.isEmpty()) {
+            throw new GradleException("Seems like example task is missing actions. Try again.")
+        }
+    }
+}
+
+task checkExerciseSolved(description: 'Performs a basic test to check whether the exercise solution is correct',
+    dependsOn: [checkExampleTaskDescription, checkExampleTaskAction]) { }
+
+task run(dependsOn: [checkExerciseSolved, 'hello'])
