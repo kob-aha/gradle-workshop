@@ -1,7 +1,10 @@
 rootProject.name ='gradle-workshop'
 
-include 'exercise-1', 'exercise-2', 'exercise-3'
-
-project(':exercise-1').projectDir = file('exercises/exercise-1')
-project(':exercise-2').projectDir = file('exercises/exercise-2')
-project(':exercise-3').projectDir = file('exercises/exercise-3')
+rootProject.projectDir.eachDir { parentDir ->
+    if (parentDir=~ /.*exercises$/) {
+        parentDir.eachDirMatch(~/exercise-[0-9]$/) { exerciseDir ->
+            include exerciseDir.name
+            project(":${exerciseDir.name}").projectDir = file("exercises/${exerciseDir.name}")
+        }
+    }
+}
