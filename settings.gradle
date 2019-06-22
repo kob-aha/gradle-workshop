@@ -1,7 +1,8 @@
 rootProject.name ='gradle-workshop'
 
-include 'exercise-1', 'exercise-2', 'exercise-3'
+include 'exercise-1', 'exercise-2', 'exercise-3', 'exercise-4'
 
 project(':exercise-1').projectDir = file('exercises/exercise-1')
 project(':exercise-2').projectDir = file('exercises/exercise-2')
 project(':exercise-3').projectDir = file('exercises/exercise-3')
+project(':exercise-4').projectDir = file('exercises/exercise-4')

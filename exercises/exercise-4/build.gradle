@@ -1,0 +1,16 @@
+apply from: 'solution.gradle'
+
+def isBuildTaskExists = project.tasks.findByName('build')
+
+task checkExerciseSolved(description: 'Performs a basic test to check whether the exercise solution is correct') {
+    doFirst {
+        if (!isBuildTaskExists) {
+            throw new GradleException("Seems like solution is invalid. Try again.")
+        }
+    }
+}
+
+task run(dependsOn: [checkExerciseSolved])
+if (isBuildTaskExists) {
+    run.dependsOn build
+}
