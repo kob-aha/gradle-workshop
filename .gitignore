@@ -104,3 +104,6 @@ keystore/*
 !keystore/Makefile
 
 *.swp
+
+.settings/
+.project
