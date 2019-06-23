@@ -1,0 +1,5 @@
+apply from: 'solution.gradle'
+
+['zip', 'copy', 'delete'].each { taskType ->
+    task "run${taskType.capitalize()}"(dependsOn: ["${taskType}Task"])
+}
