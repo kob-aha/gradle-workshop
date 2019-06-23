@@ -1,17 +1,1 @@
-apply from: 'solution.gradle'
-
-def isBuildTaskExists = project.tasks.findByName('build')
-
-task checkExerciseSolved(description: 'Performs a basic test to check whether the exercise solution is correct') {
-    onlyIf {
-        !isBuildTaskExists
-    }
-    doFirst {
-        throw new GradleException("Seems like solution is invalid. Try again.")
-    }
-}
-
-task run(dependsOn: [checkExerciseSolved])
-if (isBuildTaskExists) {
-    run.dependsOn build
-}
+// What should we add here to make sure we can compile this module? (hint: Standard plugin)
