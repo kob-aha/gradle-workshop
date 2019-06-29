@@ -10,3 +10,11 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
 }
+
+// To generate an HTML report instead of XML
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
+  reports {
+    xml.enabled = false
+    html.enabled = true
+  }
+}
