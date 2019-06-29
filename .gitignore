@@ -107,3 +107,4 @@ keystore/*
 
 .settings/
 .project
+.classpath
