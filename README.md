@@ -4,7 +4,7 @@ Hi! Welcome to the **Gradle Workshop**. This repository contains several exercis
 
 ## Prerequisites
 
-None
+- Java 8 or above
 
 **Explanation:** The recommended way to run a Gradle build is with the help of Gradle Wrapper (in short just "wrapper").
 The wrapper is a script committed into Git that invokes a declared version of Gradle, downloading it beforehand if necessary. 
