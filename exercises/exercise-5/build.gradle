@@ -1,1 +1,11 @@
-// What should we add here to make sure we can compile this module? (hint: Standard plugin)
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
