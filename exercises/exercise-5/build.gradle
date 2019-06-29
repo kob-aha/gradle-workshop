@@ -11,6 +11,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+spotbugs {
+        ignoreFailures = true
+}
+
 // To generate an HTML report instead of XML
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
   reports {
