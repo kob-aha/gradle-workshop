@@ -38,10 +38,22 @@ Once finished, make sure it is working by running the following command from the
 
 - Add java plugin to both modules. Make sure to achieve this by editing build.gradle located next to this file and **NOT** by editing build.gradle inside every module.
 
-    >**_Hint:_** Take a look at [Project.subprojects](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#subprojects-groovy.lang.Closure-)
+    >**_Hint:_** Take a look at [Project.subprojects](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#subprojects-groovy.lang.Closure-).
+
+    >**IMPORTANT:** plugins block is not supported when using subprojects, so you will need to use the Project's apply method as shown [here](https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl).
 
 - Make sure you are able to build both modules by running the following command:
 
     ``` gradlew -b exercises/exercise-6/build.gradle build ```
 
     You will need to add a dependency between client and server modules which should be added in the client module build.gradle file.
+
+- Add Application plugin to client module (by editing the module's build.gradle file) and configure "edu.gradle.GreetingClient" as the main class. 
+
+    Once finished run the client main class using the following command and verify the output match the expected bellow:
+
+    ```
+    ./gradlew -b exercises/exercise-6/build.gradle -q run
+    Hello From HelloGreeting
+    ``` 
+    
