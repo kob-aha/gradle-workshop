@@ -36,7 +36,7 @@ Once finished, make sure it is working by running the following command from the
     \--- Project ':server'
     ```
 
-- Add java plugin to both modules. Make sure to achieve this by editing build.gradle located next to this file and **NOT** by adding build.gradle inside every module.
+- Add java plugin to both modules. Make sure to achieve this by editing build.gradle located next to this file and **NOT** by editing build.gradle inside every module.
 
     >**_Hint:_** Take a look at [Project.subprojects](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#subprojects-groovy.lang.Closure-)
 
