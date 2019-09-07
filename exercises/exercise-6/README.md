@@ -7,6 +7,8 @@ It's very similar to what we have in Maven, however it adds more functionality w
 
 - [Multi Project Builds](https://guides.gradle.org/creating-multi-project-builds/)
 - [Settings](https://docs.gradle.org/current/dsl/org.gradle.api.initialization.Settings.html)
+- [Application Plugin](https://docs.gradle.org/current/userguide/application_plugin.html)
+- [Java Plugin](https://docs.gradle.org/current/userguide/java_plugin.html)
 
 ## Exercise Overview
 
@@ -18,8 +20,8 @@ Your task will be to extend the skeleton to a full build which provides a way to
 
 ## Exercise Steps
 
-- Add both client and server to exercise-6 multi module build. This should be done by editing settings.gradle file located near tihs file (inside the exercise folder).
-Once finished, make sure it is working by running the following command from the root project, making sure the output matches the bellow:
+- Add both client and server to exercise-6 multi module build. This should be done by editing settings.gradle file located near this file (inside the exercise folder).
+Once finished, verify it is working by running the following command from the root project making sure the output matches the bellow:
 
     ```
     gradlew -b exercises/exercise-6/build.gradle projects
@@ -36,7 +38,9 @@ Once finished, make sure it is working by running the following command from the
     \--- Project ':server'
     ```
 
-- Add java plugin to both modules. Make sure to achieve this by editing build.gradle located next to this file and **NOT** by editing build.gradle inside every module.
+    **Note:** "-b" parameter is required to make sure Gradle uses 'exercise-6' as the main project and ignores the exercise project. Removing this property will result in a different output as the exercise project will be presented instead of 'exercise-6'.
+
+- Add java plugin to both modules. Make sure to achieve this by editing build.gradle located next to this file and **NOT** by editing build.gradle inside each module.
 
     >**_Hint:_** Take a look at [Project.subprojects](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#subprojects-groovy.lang.Closure-).
 
