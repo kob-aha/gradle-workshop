@@ -1,0 +1,40 @@
+apply from: 'solution.gradle'
+
+def expectedPublishTaskName = 'publishExercise7PublicationToLocalRepository'
+def expectedPublishFolder = file("${projectDir}/repository")
+
+task checkPublishTaskExists(description: 'Verify the publish task exists') {
+    doFirst {
+        def expectedPublishTask = project.tasks[expectedPublishTaskName]
+        
+        if (!(expectedPublishTask)) {
+            throw new GradleException("""Seems like the solution is invalid.
+                Make sure to name the publication 'exercise7' and the repository 'local'.""")
+        }
+    }
+}
+
+task checkPublishTaskExecution(dependsOn: [checkPublishTaskExists, expectedPublishTaskName], 
+    description: 'Verify the publish tasks publishes to a local repository folder') {
+
+    doFirst {
+        
+        if (!expectedPublishFolder.exists()) {
+            throw new GradleException("Seems like ${expectedPublishFolder} folder does not exist after running ${expectedPublishTaskName} task. " +
+                "Make sure the repository is defined properly.")
+        }
+    }
+}
+
+task clearRepositoryFolder(type: Delete, description: 'Clears repository folder') {
+    delete expectedPublishFolder
+
+    onlyIf {
+        expectedPublishFolder.exists()
+    }
+}
+
+checkPublishTaskExists.mustRunAfter clearRepositoryFolder
+project.tasks[expectedPublishTaskName].mustRunAfter checkPublishTaskExists
+
+task run(dependsOn: [checkPublishTaskExecution, clearRepositoryFolder])

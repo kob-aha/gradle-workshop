@@ -3,7 +3,7 @@ rootProject.name ='gradle-workshop'
 rootProject.projectDir.eachDir { parentDir ->
     if (parentDir=~ /.*exercises$/) {
         // Load all exercises except 6 as it has it's own settings file
-        parentDir.eachDirMatch(~/exercise-[0-5,7-9]$/) { exerciseDir ->
+        parentDir.eachDirMatch(~/exercise-[0-5,7-9][0-9]*$/) { exerciseDir ->
             include exerciseDir.name
             project(":${exerciseDir.name}").projectDir = file("exercises/${exerciseDir.name}")
         }
