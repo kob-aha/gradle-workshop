@@ -7,6 +7,7 @@ task hello {
 task fromGradle {
 
     // What should we add here to make sure this task will be executed after hello task? (hint: it's not "dependsOn")
+    mustRunAfter hello
     
     doFirst {
         println "From Gradle !!!"
