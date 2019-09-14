@@ -1,0 +1,8 @@
+task zipTask(type: Zip) {
+    archiveFileName = "exercise4-textfiles.zip"
+    destinationDirectory = file("$buildDir/dist")
+
+    from ("$projectDir/files") {
+        include '*.txt'
+    }
+}
