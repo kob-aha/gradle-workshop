@@ -18,3 +18,7 @@ tasks.withType(com.github.spotbugs.SpotBugsTask) {
         html.enabled = true
     }
 }
+
+spotbugs {
+    ignoreFailures = true
+}
