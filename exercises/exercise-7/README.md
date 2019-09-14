@@ -32,7 +32,7 @@ In this exercise we will use the server code from exercise 6 and pubish it's jar
 Publish to Maven local in addition to local 'repository' folder. 
 
 **Hint:** analyze exercise-7 tasks by running ``` gradlew tasks --all```. 
-Can you see what task you should run to publish to Maven local.
+Can you see what task you should run to publish to Maven local?
 
 
 
