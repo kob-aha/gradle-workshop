@@ -6,3 +6,9 @@ task zipTask(type: Zip) {
         include '*.txt'
     }
 }
+
+task copyTask(type: Copy) {
+    from zipTask
+    into "${projectDir}/dist"
+}
+
