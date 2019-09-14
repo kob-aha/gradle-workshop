@@ -11,3 +11,15 @@
 //              description ...
 //              doFirst ...
 //          }
+task hello {
+    doFirst {
+        println "Hello World!!!"
+    }
+}
+
+example {
+    description 'This is example task'
+    doFirst {
+        println "Example Task !!!"
+    }
+}
