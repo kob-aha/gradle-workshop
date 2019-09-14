@@ -35,6 +35,9 @@ task clearRepositoryFolder(type: Delete, description: 'Clears repository folder'
 }
 
 checkPublishTaskExists.mustRunAfter clearRepositoryFolder
-project.tasks[expectedPublishTaskName].mustRunAfter checkPublishTaskExists
+
+if (project.tasks.findByName(expectedPublishTaskName)) {
+    project.tasks[expectedPublishTaskName].mustRunAfter checkPublishTaskExists
+}
 
 task run(dependsOn: [checkPublishTaskExecution, clearRepositoryFolder])
