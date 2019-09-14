@@ -12,3 +12,6 @@ task copyTask(type: Copy) {
     into "${projectDir}/dist"
 }
 
+task deleteTask(type: Delete) {
+    delete copyTask
+}
